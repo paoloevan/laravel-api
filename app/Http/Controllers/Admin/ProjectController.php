@@ -10,6 +10,7 @@ use App\Models\Technology;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Type;
 
+
 class ProjectController extends Controller
 {
     /**
