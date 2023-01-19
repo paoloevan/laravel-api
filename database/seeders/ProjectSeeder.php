@@ -20,6 +20,7 @@ class ProjectSeeder extends Seeder
 
             $project = new Project();
             $project->title = $faker->sentence(3);
+            $project->cover_image = 'https://via.placeholder.com/300x200';
             $project->team = $faker->word();
             $project->duration = $faker->randomDigit();
             $project->description = $faker->sentence(50);
