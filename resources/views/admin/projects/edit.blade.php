@@ -91,6 +91,21 @@
                 <input value="{{ old('description', $project->description) }}" type="text" name="description"
                     id="description" class="form-control mb-3 " aria-describedby="helpId">
 
+                <label for="project_url" class="form-label">Project url</label>
+                <input value="{{ old('project_url', $project->project_url) }}" type="text" name="project_url"
+                    id="project_url" class="form-control mb-3 @error('project_url') is-invalid @enderror"
+                    aria-describedby="helpId">
+                @error('project_url')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
+                <label for="source_code" class="form-label">Source code</label>
+                <input value="{{ old('source_code', $project->source_code) }}" type="text" name="source_code"
+                    id="source_code" class="form-control mb-3 @error('source_code') is-invalid @enderror"
+                    aria-describedby="helpId">
+                @error('source_code')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
 
                 <input class="btn btn-primary mt-2" type="submit">
 
