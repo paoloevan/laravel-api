@@ -6,7 +6,8 @@
 
         <div class="col">
             <h1 class="ms-5">Edit project "{{ $project->title }}"</h1>
-            <form action="{{ route('admin.projects.update', $project->slug_title) }}" method="post" class="mb-3 p-5">
+            <form action="{{ route('admin.projects.update', $project->slug_title) }}" method="post" class="mb-3 p-5"
+                enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 @include('admin.partials.error')

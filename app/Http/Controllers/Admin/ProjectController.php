@@ -46,6 +46,7 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
+        // dd($request->all());
 
         $val_data = $request->validated();
         // dd($val_data);
@@ -105,8 +106,9 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
+        // dd($request->all());
+        // dd($project);
         $val_data = $request->validated();
-        // dd($val_data);
 
         if ($request->hasFile('cover_image')) {
 
@@ -114,7 +116,7 @@ class ProjectController extends Controller
                 Storage::delete($project->cover_image);
             }
 
-            $img_path = Storage::disk('public')->put('uploads', $val_data['cover_image']);
+            $img_path = Storage::put('uploads', $request->cover_image);
 
             $val_data['cover_image'] = $img_path;
         }
