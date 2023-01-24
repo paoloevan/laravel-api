@@ -16,14 +16,16 @@ class ProjectSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 10; $i++) {
 
             $project = new Project();
             $project->title = $faker->sentence(3);
-            $project->cover_image = 'https://via.placeholder.com/300x200';
+            $project->cover_image = 'https://picsum.photos/200/300';
             $project->team = $faker->word();
             $project->duration = $faker->randomDigit();
             $project->description = $faker->sentence(50);
+            $project->project_url = $faker->domainName();
+            $project->source_code = $faker->domainName();
             $project->slug_title = Project::generate_slug($project->title);
             $project->save();
         }
